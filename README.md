@@ -4,7 +4,7 @@ A Netflix-inspired movie streaming web application built using **HTML5, Tailwind
 
 ## 🌐 Live Demo
 
-🔗 *(https://netflix-clone-eosin-gamma-24.vercel.app/)**
+🔗 *https://netflix-clone-eosin-gamma-24.vercel.app/**
 
 ---
 
