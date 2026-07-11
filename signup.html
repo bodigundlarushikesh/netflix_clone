@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>StreamFlix | Sign Up</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body class="bg-black text-white font-[Poppins]">
+
+    <!-- Background -->
+
+    <div class="fixed inset-0">
+
+        <img
+            src="https://image.tmdb.org/t/p/original/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg"
+            class="w-full h-full object-cover"
+            alt="Background">
+
+        <div class="absolute inset-0 bg-black/75"></div>
+
+    </div>
+
+    <!-- Navbar -->
+
+    <header class="absolute top-0 left-0 w-full z-20">
+
+        <div class="max-w-7xl mx-auto px-6 py-6">
+
+            <a href="index.html">
+
+                <h1 class="text-4xl font-bold text-red-600">
+
+                    StreamFlix
+
+                </h1>
+
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- Signup Form -->
+
+    <main
+        class="relative z-10 min-h-screen flex items-center justify-center px-6 py-20">
+
+        <div
+            class="w-full max-w-md bg-black/80 backdrop-blur-md rounded-xl p-10 shadow-2xl">
+
+            <h2 class="text-4xl font-bold mb-8">
+
+                Create Account
+
+            </h2>
+
+            <form
+                id="signupForm"
+                class="space-y-5">
+
+                <div>
+
+                    <label
+                        class="block mb-2 text-sm text-gray-300">
+
+                        Full Name
+
+                    </label>
+
+                    <input
+
+                        id="fullName"
+
+                        type="text"
+
+                        placeholder="Enter your name"
+
+                        class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3 outline-none focus:border-red-600">
+
+                </div>
+
+                <div>
+
+                    <label
+                        class="block mb-2 text-sm text-gray-300">
+
+                        Email
+
+                    </label>
+
+                    <input
+
+                        id="signupEmail"
+
+                        type="email"
+
+                        placeholder="Enter your email"
+
+                        class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3 outline-none focus:border-red-600">
+
+                </div>
+
+                <div>
+
+                    <label
+                        class="block mb-2 text-sm text-gray-300">
+
+                        Password
+
+                    </label>
+
+                    <div class="relative">
+
+                        <input
+
+                            id="signupPassword"
+
+                            type="password"
+
+                            placeholder="Create password"
+
+                            class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3 pr-12 outline-none focus:border-red-600">
+
+                        <button
+
+                            type="button"
+
+                            id="toggleSignupPassword"
+
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+
+                            <i class="fas fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <label
+                        class="block mb-2 text-sm text-gray-300">
+
+                        Confirm Password
+
+                    </label>
+
+                    <div class="relative">
+
+                        <input
+
+                            id="confirmPassword"
+
+                            type="password"
+
+                            placeholder="Confirm password"
+
+                            class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3 pr-12 outline-none focus:border-red-600">
+
+                        <button
+
+                            type="button"
+
+                            id="toggleConfirmPassword"
+
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+
+                            <i class="fas fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button
+
+                    type="submit"
+
+                    class="w-full bg-red-600 hover:bg-red-700 py-3 rounded-lg font-semibold">
+
+                    Create Account
+
+                </button>
+                                <div
+                    class="flex items-center my-6">
+
+                    <div class="flex-1 h-px bg-gray-700"></div>
+
+                    <span
+                        class="px-4 text-sm text-gray-400">
+
+                        OR
+
+                    </span>
+
+                    <div class="flex-1 h-px bg-gray-700"></div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="w-full border border-gray-600 hover:border-red-600 py-3 rounded-lg flex items-center justify-center gap-3 transition">
+
+                    <i class="fab fa-google"></i>
+
+                    Continue with Google
+
+                </button>
+
+                <p
+                    class="text-center text-gray-400 mt-8">
+
+                    Already have an account?
+
+                    <a
+                        href="login.html"
+                        class="text-white hover:text-red-500 transition">
+
+                        Login
+
+                    </a>
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </main>
+
+    <!-- Toast -->
+
+    <div
+
+        id="toast"
+
+        class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-red-600 text-white px-6 py-3 rounded-lg shadow-2xl z-50">
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer
+        class="absolute bottom-0 left-0 w-full py-6">
+
+        <p
+            class="text-center text-gray-500 text-sm">
+
+            © 2026 StreamFlix. All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+    <!-- Scripts -->
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

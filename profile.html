@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>StreamFlix | Profile</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body class="bg-black text-white font-[Poppins]">
+
+    <!-- =========================
+            NAVBAR
+    ========================== -->
+
+    <header
+        id="navbar"
+        class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md z-50">
+
+        <div
+            class="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+
+            <a href="index.html">
+
+                <h1
+                    class="text-4xl font-bold text-red-600">
+
+                    StreamFlix
+
+                </h1>
+
+            </a>
+
+            <div
+                class="flex items-center gap-6">
+
+                <a
+                    href="index.html"
+                    class="hover:text-red-500">
+
+                    Home
+
+                </a>
+
+                <a
+                    href="watchlist.html"
+                    class="hover:text-red-500">
+
+                    Watchlist
+
+                </a>
+
+                <button
+
+                    id="logoutBtn"
+
+                    class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-lg">
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+            PROFILE HEADER
+    ========================== -->
+
+    <section
+        class="pt-32 pb-12 px-6">
+
+        <div
+            class="max-w-7xl mx-auto">
+
+            <div
+                class="bg-neutral-900 rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row items-center gap-10">
+
+                <img
+
+                    id="profileImage"
+
+                    src="https://ui-avatars.com/api/?name=User&background=E50914&color=fff&size=256"
+
+                    alt="Profile"
+
+                    class="w-44 h-44 rounded-full border-4 border-red-600 object-cover">
+
+                <div class="flex-1">
+
+                    <h1
+
+                        id="profileName"
+
+                        class="text-5xl font-bold">
+
+                        User Name
+
+                    </h1>
+
+                    <p
+
+                        id="profileEmail"
+
+                        class="text-gray-400 mt-3 text-lg">
+
+                        user@email.com
+
+                    </p>
+
+                    <div
+                        class="flex flex-wrap gap-4 mt-8">
+
+                        <button
+
+                            id="editProfileBtn"
+
+                            class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg">
+
+                            <i class="fas fa-user-pen mr-2"></i>
+
+                            Edit Profile
+
+                        </button>
+
+                        <button
+
+                            id="changePasswordBtn"
+
+                            class="bg-neutral-700 hover:bg-neutral-600 px-6 py-3 rounded-lg">
+
+                            <i class="fas fa-lock mr-2"></i>
+
+                            Change Password
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+            PROFILE STATS
+    ========================== -->
+
+    <section
+        class="pb-20 px-6">
+
+        <div
+            class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+
+            <div
+                class="bg-neutral-900 rounded-xl p-8">
+
+                <h3
+                    class="text-gray-400">
+
+                    Watchlist
+
+                </h3>
+
+                <h2
+
+                    id="watchlistCount"
+
+                    class="text-5xl font-bold mt-4">
+
+                    0
+
+                </h2>
+
+            </div>
+
+            <div
+                class="bg-neutral-900 rounded-xl p-8">
+
+                <h3
+                    class="text-gray-400">
+
+                    Member Since
+
+                </h3>
+
+                <h2
+
+                    id="memberSince"
+
+                    class="text-2xl font-bold mt-4">
+
+                    --
+
+                </h2>
+
+            </div>
+
+            <div
+                class="bg-neutral-900 rounded-xl p-8">
+
+                <h3
+                    class="text-gray-400">
+
+                    Account Status
+
+                </h3>
+
+                <h2
+                    class="text-2xl font-bold text-green-500 mt-4">
+
+                    Active
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- =========================
+            EDIT PROFILE MODAL
+    ========================== -->
+
+    <div
+
+        id="editProfileModal"
+
+        class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center px-6">
+
+        <div
+            class="bg-neutral-900 rounded-2xl p-8 w-full max-w-lg">
+
+            <h2
+                class="text-3xl font-bold mb-8">
+
+                Edit Profile
+
+            </h2>
+
+            <form
+                id="profileForm"
+                class="space-y-5">
+
+                <div>
+
+                    <label class="block mb-2 text-gray-400">
+
+                        Full Name
+
+                    </label>
+
+                    <input
+
+                        id="editName"
+
+                        type="text"
+
+                        class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 outline-none focus:border-red-600">
+
+                </div>
+
+                <div>
+
+                    <label class="block mb-2 text-gray-400">
+
+                        Email
+
+                    </label>
+
+                    <input
+
+                        id="editEmail"
+
+                        type="email"
+
+                        class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 outline-none focus:border-red-600">
+
+                </div>
+
+                <div
+                    class="flex justify-end gap-4 pt-4">
+
+                    <button
+
+                        type="button"
+
+                        id="cancelEdit"
+
+                        class="px-6 py-3 rounded-lg bg-neutral-700 hover:bg-neutral-600">
+
+                        Cancel
+
+                    </button>
+
+                    <button
+
+                        type="submit"
+
+                        class="px-6 py-3 rounded-lg bg-red-600 hover:bg-red-700">
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+            FOOTER
+    ========================== -->
+
+    <footer
+        class="bg-neutral-950">
+
+        <div
+            class="max-w-7xl mx-auto px-6 py-10">
+
+            <div
+                class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+                <h2
+                    class="text-3xl font-bold text-red-600">
+
+                    StreamFlix
+
+                </h2>
+
+                <div
+                    class="flex gap-6 text-2xl">
+
+                    <i class="fab fa-facebook hover:text-red-500 transition"></i>
+
+                    <i class="fab fa-instagram hover:text-red-500 transition"></i>
+
+                    <i class="fab fa-x-twitter hover:text-red-500 transition"></i>
+
+                    <i class="fab fa-youtube hover:text-red-500 transition"></i>
+
+                </div>
+
+            </div>
+
+            <div
+                class="border-t border-neutral-800 mt-8 pt-6 text-center text-gray-500">
+
+                © 2026 StreamFlix. All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- =========================
+            SCRIPTS
+    ========================== -->
+
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>

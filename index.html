@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StreamFlix | Unlimited Movies & TV Shows</title>
+
+    <meta name="description"
+        content="Watch unlimited movies and TV shows with StreamFlix.">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- JavaScript -->
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+        
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/components.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body class="bg-black text-white font-[Poppins]">
+
+    <!-- =========================
+            NAVBAR
+    ========================== -->
+
+    <header id="navbar"
+        class="fixed top-0 left-0 w-full z-50">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <div
+                class="h-20 flex items-center justify-between">
+
+                <!-- Logo -->
+
+                <a href="index.html">
+
+                    <h1
+                        class="text-red-600 text-4xl font-bold">
+
+                        StreamFlix
+
+                    </h1>
+
+                </a>
+
+                <!-- Desktop Menu -->
+
+                <nav
+                    class="hidden lg:flex items-center gap-8">
+
+                    <a href="#home"
+                        class="hover:text-red-500 transition">
+
+                        Home
+
+                    </a>
+
+                    <a href="#trending"
+                        class="hover:text-red-500 transition">
+
+                        Trending
+
+                    </a>
+
+                    <a href="#popular"
+                        class="hover:text-red-500 transition">
+
+                        Popular
+
+                    </a>
+
+                    <a href="#toprated"
+                        class="hover:text-red-500 transition">
+
+                        Top Rated
+
+                    </a>
+
+                    <a href="#tvshows"
+                           class="hover:text-red-500 transition">
+
+                           TV Shows
+
+                     </a>
+                </nav>
+
+                <!-- Right Side -->
+
+                <div
+                    class="flex items-center gap-5">
+
+                    <button id="searchBtn">
+
+                        <i
+                            class="fas fa-search text-xl hover:text-red-500"></i>
+
+                    </button>
+
+                    <button>
+
+                        <i
+                            class="fas fa-bell text-xl hover:text-red-500"></i>
+
+                    </button>
+
+                    <a href="login.html">
+
+                        <button
+                            class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-md">
+
+                            Sign In
+
+                        </button>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+            HERO
+    ========================== -->
+
+    <section
+        id="home"
+        class="relative h-screen overflow-hidden">
+
+        <img
+            id="heroImage"
+            class="absolute inset-0 w-full h-full object-cover"
+            src=""
+            alt="Hero Banner">
+
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent">
+        </div>
+
+        <div
+            class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent">
+        </div>
+
+        <div
+            class="relative z-10 h-full flex items-center">
+
+            <div
+                class="max-w-3xl px-8 lg:px-16">
+
+                <span
+                    class="uppercase tracking-[6px] text-red-500 font-semibold">
+
+                    StreamFlix Original
+
+                </span>
+
+                <h1
+                    id="heroTitle"
+                    class="text-6xl lg:text-7xl font-bold mt-5">
+                </h1>
+
+                <p
+                    id="heroDescription"
+                    class="text-gray-300 text-lg leading-8 mt-8">
+                </p>
+
+                <div
+                    class="flex gap-5 mt-10">
+
+                    <button
+                        id="playBtn"
+                        class="bg-white text-black px-8 py-4 rounded-lg font-semibold">
+
+                        <i class="fas fa-play mr-2"></i>
+
+                        Play
+
+                    </button>
+
+                    <button
+                        id="infoBtn"
+                        class="bg-gray-700/70 px-8 py-4 rounded-lg">
+
+                        <i class="fas fa-circle-info mr-2"></i>
+
+                        More Info
+
+                    </button>
+
+                </div>
+
+                <div
+                    class="flex gap-8 mt-10 text-gray-300">
+
+                    <span id="heroRating"></span>
+
+                    <span id="heroYear"></span>
+
+                    <span id="heroGenre"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+            TRENDING
+    ========================== -->
+
+    <section
+        id="trending"
+        class="px-8 py-14">
+
+        <div
+            class="flex justify-between items-center">
+
+            <h2
+                class="text-3xl font-bold">
+
+                🔥 Trending Now
+
+            </h2>
+
+            <button
+                class="text-red-500">
+
+                View All
+
+            </button>
+
+        </div>
+
+        <div
+            id="trendingContainer"
+            class="movie-row mt-8">
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+            POPULAR
+    ========================== -->
+
+    <section
+        id="popular"
+        class="px-8 py-10">
+
+        <div
+            class="flex justify-between items-center">
+
+            <h2
+                class="text-3xl font-bold">
+
+                ⭐ Popular Movies
+
+            </h2>
+
+            <button
+                class="text-red-500">
+
+                View All
+
+            </button>
+
+        </div>
+
+        <div
+            id="popularContainer"
+            class="movie-row mt-8">
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+            TOP RATED
+    ========================== -->
+
+    <section
+        id="toprated"
+        class="px-8 py-10">
+
+        <div
+            class="flex justify-between items-center">
+
+            <h2
+                class="text-3xl font-bold">
+
+                🏆 Top Rated
+
+            </h2>
+
+            <button
+                class="text-red-500">
+
+                View All
+
+            </button>
+
+        </div>
+
+        <div
+            id="topRatedContainer"
+            class="movie-row mt-8">
+
+        </div>
+        
+
+    </section>
+    <!-- =========================
+        TV SHOWS
+========================= -->
+
+<section
+    id="tvshows"
+    class="px-8 py-10">
+
+    <div
+        class="flex justify-between items-center">
+
+        <h2
+            class="text-3xl font-bold">
+
+            📺 TV Shows
+
+        </h2>
+
+        <button
+            class="text-red-500 hover:text-red-400 transition">
+
+            View All
+
+        </button>
+
+    </div>
+
+    <div
+        id="tvContainer"
+        class="movie-row mt-8">
+
+    </div>
+
+</section>
+    <!-- Shared JavaScript -->
+<script src="js/config.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/modal.js"></script>
+
+<!-- Page Scripts -->
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html> 

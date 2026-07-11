@@ -1,0 +1,725 @@
+/* =====================================================
+   STREAMFLIX
+   MAIN STYLESHEET
+===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+    line-height:1.5;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+    outline:none;
+    transition:.3s ease;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ===========================
+   ROOT VARIABLES
+=========================== */
+
+:root{
+
+    --primary:#E50914;
+    --secondary:#B81D24;
+    --dark:#000000;
+    --dark-light:#111111;
+    --card:#181818;
+    --white:#ffffff;
+    --gray:#b3b3b3;
+    --transition:.35s;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ff2532;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+#navbar{
+
+    transition:.4s ease;
+
+}
+
+.nav-scroll{
+
+    background:rgba(0,0,0,.92);
+
+    backdrop-filter:blur(16px);
+
+    box-shadow:0 6px 20px rgba(0,0,0,.4);
+
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+#hero{
+
+    position:relative;
+
+}
+
+#heroImage{
+
+    animation:heroZoom 12s linear infinite;
+
+}
+
+@keyframes heroZoom{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+#heroTitle{
+
+    animation:fadeUp .8s ease;
+
+}
+
+#heroDescription{
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   HERO BUTTONS
+=========================== */
+
+#playBtn{
+
+    background:#fff;
+    color:#000;
+    font-weight:600;
+
+}
+
+#playBtn:hover{
+
+    background:#e5e5e5;
+    transform:scale(1.05);
+
+}
+
+#infoBtn{
+
+    background:rgba(109,109,110,.7);
+    color:#fff;
+
+}
+
+#infoBtn:hover{
+
+    background:rgba(109,109,110,.95);
+
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+section{
+
+    position:relative;
+
+}
+
+section h2{
+
+    display:inline-block;
+    position:relative;
+    margin-bottom:10px;
+
+}
+
+section h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:65%;
+
+    height:4px;
+
+    background:var(--primary);
+
+    border-radius:10px;
+
+}
+
+/* ===========================
+   MOVIE ROW
+=========================== */
+
+.movie-row{
+
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-behavior:smooth;
+    padding-bottom:15px;
+
+}
+
+.movie-row::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+/* ===========================
+   MOVIE CARD
+=========================== */
+
+.movie-card{
+
+    min-width:220px;
+
+    background:var(--card);
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    transition:var(--transition);
+
+}
+
+.movie-card:hover{
+
+    transform:scale(1.07);
+
+    z-index:100;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.55);
+
+}
+
+.movie-card img{
+
+    height:320px;
+
+    object-fit:cover;
+
+}
+
+.movie-info{
+
+    padding:14px;
+
+}
+
+.movie-title{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.movie-rating{
+
+    color:#FFD700;
+
+    font-size:14px;
+
+}
+/* =====================================================
+   MOVIE OVERLAY
+===================================================== */
+
+.movie-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.96),
+        rgba(0,0,0,.15)
+    );
+
+    opacity:0;
+
+    transition:.35s ease;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:18px;
+
+}
+
+.movie-card:hover .movie-overlay{
+
+    opacity:1;
+
+}
+
+.overlay-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+}
+
+.overlay-buttons button{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    color:#000000;
+
+    font-size:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.3s;
+
+}
+
+.overlay-buttons button:hover{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    transform:scale(1.1);
+
+}
+
+.overlay-buttons button:active{
+
+    transform:scale(.95);
+
+}
+
+/* =====================================================
+   SEARCH MODAL
+===================================================== */
+
+#searchModal{
+
+    transition:.35s ease;
+
+}
+
+#searchInput{
+
+    transition:.3s;
+
+}
+
+#searchInput:focus{
+
+    border-color:var(--primary);
+
+}
+
+#searchResults{
+
+    min-height:250px;
+
+}
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+#mobileMenu{
+
+    transition:.4s ease;
+
+}
+
+#mobileMenu a{
+
+    transition:.3s;
+
+}
+
+#mobileMenu a:hover{
+
+    color:var(--primary);
+
+}
+
+/* =====================================================
+   MENU BUTTON
+===================================================== */
+
+#menuBtn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.3s;
+
+}
+
+#menuBtn:hover{
+
+    transform:scale(1.08);
+
+    background:var(--secondary);
+
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:#090909;
+
+}
+
+footer ul li{
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+footer ul li:hover{
+
+    color:var(--white);
+
+}
+
+footer i{
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+footer i:hover{
+
+    color:var(--primary);
+
+    transform:translateY(-4px);
+
+}
+
+/* =====================================================
+   UTILITY CLASSES
+===================================================== */
+
+.hide{
+
+    display:none !important;
+
+}
+
+.show{
+
+    display:block !important;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.fade-in{
+
+    animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+.scale-up{
+
+    animation:scaleUp .4s ease;
+
+}
+
+@keyframes scaleUp{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width:1200px){
+
+    .movie-card{
+
+        min-width:200px;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    #heroTitle{
+
+        font-size:4rem;
+
+    }
+
+    .movie-card{
+
+        min-width:180px;
+
+    }
+
+    .movie-card img{
+
+        height:280px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    #heroTitle{
+
+        font-size:3rem;
+
+    }
+
+    #heroDescription{
+
+        font-size:15px;
+
+        line-height:28px;
+
+    }
+
+    section{
+
+        padding-left:20px !important;
+
+        padding-right:20px !important;
+
+    }
+
+    .movie-card{
+
+        min-width:160px;
+
+    }
+
+    .movie-card img{
+
+        height:240px;
+
+    }
+
+    .overlay-buttons{
+
+        gap:8px;
+
+    }
+
+    .overlay-buttons button{
+
+        width:36px;
+
+        height:36px;
+
+        font-size:14px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    #heroTitle{
+
+        font-size:2.4rem;
+
+    }
+
+    #heroDescription{
+
+        font-size:14px;
+
+    }
+
+    .movie-card{
+
+        min-width:145px;
+
+    }
+
+    .movie-card img{
+
+        height:210px;
+
+    }
+
+    section h2{
+
+        font-size:1.5rem;
+
+    }
+
+    footer{
+
+        text-align:center;
+
+    }
+
+}

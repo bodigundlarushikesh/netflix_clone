@@ -1,0 +1,18 @@
+# =====================================================
+# STREAMFLIX
+# ROBOTS.TXT
+# =====================================================
+
+User-agent: *
+
+Allow: /
+
+Disallow: /assets/private/
+
+Disallow: /temp/
+
+Disallow: /.git/
+
+Disallow: /node_modules/
+
+Sitemap: https://your-domain.com/sitemap.xml

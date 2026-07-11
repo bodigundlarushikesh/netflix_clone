@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>StreamFlix | Movie Details</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body class="bg-black text-white font-[Poppins]">
+
+    <!-- =========================
+            NAVBAR
+    ========================== -->
+
+    <header
+        id="navbar"
+        class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md">
+
+        <div
+            class="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+
+            <a href="index.html">
+
+                <h1
+                    class="text-4xl font-bold text-red-600">
+
+                    StreamFlix
+
+                </h1>
+
+            </a>
+
+            <div
+                class="flex items-center gap-5">
+
+                <a
+                    href="search.html"
+                    class="hover:text-red-500">
+
+                    <i class="fas fa-search text-xl"></i>
+
+                </a>
+
+                <a
+                    href="watchlist.html"
+                    class="hover:text-red-500">
+
+                    <i class="fas fa-heart text-xl"></i>
+
+                </a>
+
+                <a
+                    href="profile.html"
+                    class="hover:text-red-500">
+
+                    <i class="fas fa-user text-xl"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+            HERO
+    ========================== -->
+
+    <section
+        id="movieHero"
+        class="relative h-[80vh]">
+
+        <img
+
+            id="backdrop"
+
+            src=""
+
+            alt="Backdrop"
+
+            class="absolute inset-0 w-full h-full object-cover">
+
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent">
+
+        </div>
+
+        <div
+            class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent">
+
+        </div>
+
+        <div
+            class="relative z-10 h-full flex items-center">
+
+            <div
+                class="max-w-4xl px-8 lg:px-16">
+
+                <span
+                    id="movieStatus"
+                    class="uppercase tracking-[6px] text-red-500 font-semibold">
+
+                </span>
+
+                <h1
+                    id="movieTitle"
+                    class="text-6xl font-bold mt-5">
+
+                </h1>
+
+                <p
+                    id="movieOverview"
+                    class="mt-8 text-lg text-gray-300 leading-8">
+
+                </p>
+
+                <div
+                    class="flex flex-wrap gap-5 mt-10">
+
+                    <button
+                        id="watchTrailer"
+                        class="bg-white text-black px-8 py-4 rounded-lg font-semibold">
+
+                        <i class="fas fa-play mr-2"></i>
+
+                        Watch Trailer
+
+                    </button>
+
+                    <button
+                        id="addWatchlist"
+                        class="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg">
+
+                        <i class="fas fa-heart mr-2"></i>
+
+                        Add to Watchlist
+
+                    </button>
+
+                </div>
+
+                <div
+                    class="flex flex-wrap gap-8 mt-10 text-gray-300">
+
+                    <span id="movieRating"></span>
+
+                    <span id="movieRelease"></span>
+
+                    <span id="movieRuntime"></span>
+
+                    <span id="movieLanguage"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+            DETAILS
+    ========================== -->
+
+    <section
+        class="max-w-7xl mx-auto px-6 py-16">
+
+        <div
+            class="grid lg:grid-cols-3 gap-10">
+
+            <div>
+
+                <img
+
+                    id="poster"
+
+                    src=""
+
+                    alt="Poster"
+
+                    class="rounded-xl shadow-2xl">
+
+            </div>
+
+            <div
+                class="lg:col-span-2">
+
+                <h2
+                    class="text-4xl font-bold mb-6">
+
+                    Movie Information
+
+                </h2>
+
+                <div
+                    class="grid md:grid-cols-2 gap-6">
+
+                    <div>
+
+                        <p class="text-gray-400">
+                            Genre
+                        </p>
+
+                        <h3
+                            id="movieGenres"
+                            class="mt-2 text-xl font-semibold">
+
+                        </h3>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-gray-400">
+                            Budget
+                        </p>
+
+                        <h3
+                            id="movieBudget"
+                            class="mt-2 text-xl font-semibold">
+
+                        </h3>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-gray-400">
+                            Revenue
+                        </p>
+
+                        <h3
+                            id="movieRevenue"
+                            class="mt-2 text-xl font-semibold">
+
+                        </h3>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-gray-400">
+                            Production
+                        </p>
+
+                        <h3
+                            id="movieStudio"
+                            class="mt-2 text-xl font-semibold">
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- =========================
+            CAST SECTION
+    ========================== -->
+
+    <section
+        class="max-w-7xl mx-auto px-6 py-10">
+
+        <div
+            class="flex items-center justify-between mb-8">
+
+            <h2
+                class="text-3xl font-bold">
+
+                Top Cast
+
+            </h2>
+
+        </div>
+
+        <div
+
+            id="castContainer"
+
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+            SIMILAR MOVIES
+    ========================== -->
+
+    <section
+        class="max-w-7xl mx-auto px-6 py-10">
+
+        <div
+            class="flex items-center justify-between mb-8">
+
+            <h2
+                class="text-3xl font-bold">
+
+                Similar Movies
+
+            </h2>
+
+        </div>
+
+        <div
+
+            id="similarMovies"
+
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+            TRAILER MODAL
+    ========================== -->
+
+    <div
+
+        id="trailerModal"
+
+        class="hidden fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-6">
+
+        <div
+            class="relative w-full max-w-5xl">
+
+            <button
+
+                id="closeTrailer"
+
+                class="absolute -top-12 right-0 text-white text-4xl hover:text-red-500">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+            <iframe
+
+                id="trailerFrame"
+
+                class="w-full aspect-video rounded-xl"
+
+                src=""
+
+                allowfullscreen>
+
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+            FOOTER
+    ========================== -->
+
+    <footer
+        class="bg-neutral-950 mt-20">
+
+        <div
+            class="max-w-7xl mx-auto px-6 py-12">
+
+            <div
+                class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+                <h2
+                    class="text-3xl font-bold text-red-600">
+
+                    StreamFlix
+
+                </h2>
+
+                <div
+                    class="flex gap-6 text-2xl">
+
+                    <i class="fab fa-facebook hover:text-red-500 transition"></i>
+
+                    <i class="fab fa-instagram hover:text-red-500 transition"></i>
+
+                    <i class="fab fa-x-twitter hover:text-red-500 transition"></i>
+
+                    <i class="fab fa-youtube hover:text-red-500 transition"></i>
+
+                </div>
+
+            </div>
+
+            <div
+                class="border-t border-neutral-800 mt-8 pt-6 text-center text-gray-500">
+
+                © 2026 StreamFlix. All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- =========================
+            SCRIPTS
+    ========================== -->
+
+    <!-- Shared JavaScript -->
+<script src="js/config.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/modal.js"></script>
+
+<!-- Page Scripts -->
+<script src="js/api.js"></script>
+<script src="js/movie.js"></script>
+
+</body>
+
+</html>

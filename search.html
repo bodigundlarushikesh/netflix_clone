@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>StreamFlix | Search</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body class="bg-black text-white font-[Poppins]">
+
+    <!-- =========================
+            NAVBAR
+    ========================== -->
+
+    <header
+        id="navbar"
+        class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md">
+
+        <div
+            class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+            <a href="index.html">
+
+                <h1
+                    class="text-4xl font-bold text-red-600">
+
+                    StreamFlix
+
+                </h1>
+
+            </a>
+
+            <a
+                href="index.html"
+                class="hover:text-red-500 transition">
+
+                <i class="fas fa-house mr-2"></i>
+
+                Home
+
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+            SEARCH SECTION
+    ========================== -->
+
+    <main
+        class="pt-32 px-6 pb-16">
+
+        <div
+            class="max-w-7xl mx-auto">
+
+            <h2
+                class="text-4xl font-bold mb-8">
+
+                Search Movies
+
+            </h2>
+
+            <div
+                class="relative">
+
+                <input
+
+                    id="searchInput"
+
+                    type="text"
+
+                    placeholder="Search movies, TV shows..."
+
+                    class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-6 py-4 pr-16 text-lg outline-none focus:border-red-600">
+
+                <button
+
+                    id="searchButton"
+
+                    class="absolute right-5 top-1/2 -translate-y-1/2 text-red-500 text-xl">
+
+                    <i class="fas fa-search"></i>
+
+                </button>
+
+            </div>
+
+            <div
+                id="searchInfo"
+                class="mt-8 text-gray-400">
+
+                Start typing to search for your favorite movies.
+
+            </div>
+
+            <div
+
+                id="searchResults"
+
+                class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mt-10">
+
+            </div>
+
+        </div>
+
+    </main>
+        <!-- =========================
+            LOADING
+    ========================== -->
+
+    <div
+
+        id="loading"
+
+        class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center">
+
+        <div class="text-center">
+
+            <div
+                class="w-16 h-16 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto">
+
+            </div>
+
+            <p class="mt-6 text-lg text-gray-300">
+
+                Searching...
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+            NO RESULTS
+    ========================== -->
+
+    <div
+
+        id="noResults"
+
+        class="hidden text-center py-20">
+
+        <i
+            class="fas fa-film text-7xl text-gray-600 mb-6">
+
+        </i>
+
+        <h2
+            class="text-3xl font-bold">
+
+            No Movies Found
+
+        </h2>
+
+        <p
+            class="text-gray-400 mt-4">
+
+            Try searching with another keyword.
+
+        </p>
+
+    </div>
+
+    <!-- =========================
+            FOOTER
+    ========================== -->
+
+    <footer
+        class="bg-neutral-950 mt-20">
+
+        <div
+            class="max-w-7xl mx-auto px-6 py-12">
+
+            <div
+                class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+                <h2
+                    class="text-3xl font-bold text-red-600">
+
+                    StreamFlix
+
+                </h2>
+
+                <div
+                    class="flex gap-6 text-2xl">
+
+                    <i class="fab fa-facebook hover:text-red-500 transition"></i>
+
+                    <i class="fab fa-instagram hover:text-red-500 transition"></i>
+
+                    <i class="fab fa-x-twitter hover:text-red-500 transition"></i>
+
+                    <i class="fab fa-youtube hover:text-red-500 transition"></i>
+
+                </div>
+
+            </div>
+
+            <div
+                class="border-t border-neutral-800 mt-8 pt-6 text-center text-gray-500">
+
+                © 2026 StreamFlix. All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- =========================
+            SCRIPTS
+    ========================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/search.js"></script>
+
+</body>
+
+</html>
